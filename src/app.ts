@@ -1,5 +1,5 @@
 import express, { Application } from "express"
-import { connect } from "./infra/database"
+import { connect } from "./Infra/database"
 import { intercepterError } from "./http/middlewares/interception";
 import { Route } from "./routes/routes";
 
