@@ -1,5 +1,6 @@
 import express, { Application } from "express"
 import { connect } from "./infra/database"
+import { intercepterError } from "./http/middlewares/interception";
 
 class App {
     public app: Application
@@ -14,22 +15,22 @@ class App {
 
     initializeRouter()
     {
-        
+           
     }
 
     interceptError()
-    {
-
+    {   
+        this.app.use(intercepterError);
     }
 
     middlewaresInitialize()
     {
-        this.app.use(express.json())
-        this.app.use(express.urlencoded({extended: true}))
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({extended: true}));
     }
 
     listen(){
-        this.app.listen(3333, () => console.log('server is running'))
+        this.app.listen(3333, () => console.log('server is running'));
     }
 }
 
