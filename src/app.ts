@@ -1,9 +1,11 @@
 import express, { Application } from "express"
 import { connect } from "./infra/database"
 import { intercepterError } from "./http/middlewares/interception";
+import { Route } from "./routes/routes";
 
 class App {
-    public app: Application
+    public app: Application;
+    private eventRoutes = new Route();
 
     constructor(){
         this.app = express();
@@ -15,7 +17,7 @@ class App {
 
     initializeRouter()
     {
-           
+        this.app.use('/events', this.eventRoutes.router);
     }
 
     interceptError()
