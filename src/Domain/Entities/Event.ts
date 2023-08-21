@@ -1,3 +1,5 @@
+import { Location } from "./Location";
+import { Price } from "./Price";
 import { User } from "./User";
 
 class Event {
@@ -8,7 +10,8 @@ class Event {
         public cover: string,
         public coupons: string[],
         public participants: User[],
-        public location: string[],
+        public location: Location,
+        public Price: Price,
         public city: string,
     ){}
 }
