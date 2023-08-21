@@ -6,5 +6,6 @@ export default class EventUseCase {
 
     async create(eventData: Event){
         const event = await this.eventRepository.add(eventData);
+        return event;
     }
 }
