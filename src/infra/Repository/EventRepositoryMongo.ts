@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 import { Event } from "../../Domain/Entities/Event";
-import { EventRepositoryContract } from "./EventRepositoryContract";
+import { EventRepositoryContract } from "../../Domain/RepositoryContracts/EventRepositoryContract";
 
 const eventSchema = new mongoose.Schema({
     title: String,
